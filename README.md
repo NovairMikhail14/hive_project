@@ -1,16 +1,6 @@
 # hive_project
 
-A new Flutter project.
+Task Project for the Amit using Hive *Package*   
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# hive_project
+![Home Page](C:\Users\fady\StudioProjects\hive_project\asset_markdown\HomePage.png)

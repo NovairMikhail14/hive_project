@@ -5,10 +5,13 @@ import 'package:hive_project/01-Data/User.dart';
 class BottomSheetScreen extends StatefulWidget {
   BuildContext ctx;
   int? idindex;
-  String? title ;
+  String? title;
+
   String? description;
+
   // int idindex;
-  BottomSheetScreen({required this.ctx,this.idindex,this.title,this.description});
+  BottomSheetScreen(
+      {required this.ctx, this.idindex, this.title, this.description});
 
   @override
   State<BottomSheetScreen> createState() => _BottomSheetScreenState();
@@ -17,30 +20,30 @@ class BottomSheetScreen extends StatefulWidget {
 class _BottomSheetScreenState extends State<BottomSheetScreen> {
   var _TextEditTitle = new TextEditingController();
   var _TextEditDescription = new TextEditingController();
-  late  Box box;
+  late Box box;
 
   @override
   void initState() {
-    box = Hive.box<Map<dynamic,dynamic>>("HiveDB");
+    box = Hive.box<Map<dynamic, dynamic>>("HiveDB");
     setState(() {
-      _TextEditTitle.text =widget.title??"";
-      _TextEditDescription.text =widget.description??"";
+      _TextEditTitle.text = widget.title ?? "";
+      _TextEditDescription.text = widget.description ?? "";
     });
 
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(
       child: Padding(
-        padding:
-            EdgeInsets.only(bottom: MediaQuery.of(widget.ctx).viewInsets.bottom),
+        padding: EdgeInsets.only(
+            bottom: MediaQuery.of(widget.ctx).viewInsets.bottom),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-             Container(
+            Container(
                 margin: EdgeInsets.only(top: 20, bottom: 20),
                 alignment: Alignment.center,
                 child: Column(
@@ -105,19 +108,26 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      var mapping = Map<dynamic ,dynamic>();
+                      var mapping = Map<dynamic, dynamic>();
                       mapping["title"] = _TextEditTitle.text;
                       mapping["description"] = _TextEditDescription.text;
                       mapping["checkbox"] = false;
                       // User user =User(title:  _TextEditTitle.text, Description: _TextEditDescription.text);
-                      widget.title == null?  box.add(mapping) :box.putAt(widget.idindex!,{"title": _TextEditTitle.text,"description":_TextEditDescription.text,"checkbox":false}) ;
+                      widget.title == null
+                          ? box.add(mapping)
+                          : box.putAt(widget.idindex!, {
+                              "title": _TextEditTitle.text,
+                              "description": _TextEditDescription.text,
+                              "checkbox": false
+                            });
 
                       // print(box.getAt(0));
                       Navigator.pop(context);
                     },
-                    child: Text(widget.title == null? "Save":"Edit" ),
+                    child: Text(widget.title == null ? "Save" : "Edit"),
                     style: ButtonStyle(
-                        fixedSize: MaterialStateProperty.all(Size.fromWidth(150)),
+                        fixedSize:
+                            MaterialStateProperty.all(Size.fromWidth(150)),
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)))),
                   )
