@@ -2,7 +2,7 @@
 
 ### To Do Project using [Hive Package](https://pub.dev/packages/hive)   
 
-# hive_project
+# Sample Image
 
 <p align="left" >
   <img width="240" src= "https://raw.githubusercontent.com/NovairMikhail14/hive_project/master/asset_markdown/HomePage.png" >
