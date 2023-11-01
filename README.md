@@ -1,6 +1,6 @@
 # hive_project
 
-### Task Project for the Amit using [Hive Package](https://pub.dev/packages/hive)   
+### To Do Project using [Hive Package](https://pub.dev/packages/hive)   
 
 # hive_project
 
